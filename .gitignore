@@ -1,0 +1,10 @@
+data/*
+rawdata/*
+test_data/*
+.Rproj.user/*
+renv/*
+.RData
+.Rhistory
+.Rprofiel
+tutorial_db
+
