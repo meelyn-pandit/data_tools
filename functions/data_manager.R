@@ -6,6 +6,12 @@ library(data.table)
 library(rjson)
 #directory_name <- "../data/test/V1"
 load_data <- function(directory_name=NULL, starttime=NULL, endtime=NULL, tags=NULL) {
+  #' load_data
+  #' 
+  #' Loads data downloaded from CTT servers and into your local database
+  #' @param directory_name The folder which contains your downloaded files
+  #' @param starttime The start time in POSIXct
+  #' 
   if (is.null(directory_name)) stop("expected an argument to specify the directory")
   beep_pattern <- '*-data*.*csv*'
   #fancy = '.*CTT-(?P<station_id>[a-fA-F0-9]{12})-(?P<filetype>[a-zA-Z-_]+)+' test if this in correct type of expression gets files

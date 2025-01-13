@@ -3,6 +3,8 @@ library(DBI)
 library(RPostgres)
 library(duckdb)
 
+source('functions/data_manager.R')
+
 start <- Sys.time()
 
 ###settings###
@@ -25,3 +27,11 @@ dbDisconnect(conn)
 time_elapse <- Sys.time() - start
 
 print(time_elapse)
+
+# Chapter 3 About the Functions
+## 3.1 Data Manager
+### 3.1.1 load_data
+
+load_data('rawdata/')
+
+# 
