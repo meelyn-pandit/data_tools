@@ -1,0 +1,32 @@
+---
+title: "CTT Data Tools - Ch. 4: Calibration"
+output: html_notebook
+---
+
+# Chapter 4. Calibration
+
+## 4.1 Description
+
+To best use the triangulation approach, calibration needs to be performed on your equipment. The goal of calibration is to come up with tag-specific relationship between RSSI and distance that is appropriate for your study site. An example of how to calibrate your system can be found in the supplementary material of Bircher et al. 2020. Notice this calibration experiment demonstrates calibration of tags and receivers (in our case, nodes).
+
+## 4.2 Tag Calibration
+
+* transects to cover differrently vegetated areas of the study site
+* varying tag height at each distance along the transect
+* simulations of movement and different orientations
+
+## 4.3 Node Calibration
+
+Tags at varying orientations at fixed distance from each node.
+
+## 4.4 How to Use the Output
+
+There are a few routes to go from here. To extend the application by Bircher et al. (2020), the latter could be used to adjust RSSI values per node. Alternatively, one could derive a simple RSSI ~ distance relationship for each tag using the data above to [measure N](https://iotandelectronics.wordpress.com/2016/10/07/how-to-calculate-distance-from-the-rssi-value-of-the-ble-beacon/) and input custom relationships (see 5.2.2).
+
+**References**
+
+Bircher, Nina, Kees van Oers, Camilla A Hinde, and Marc Naguib. 2020. “Extraterritorial Forays by Great Tits Are Associated with Dawn Song in Unexpected Ways.” Behavioral Ecology 31 (4): 873–83. 
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+

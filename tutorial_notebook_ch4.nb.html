@@ -11,7 +11,7 @@
 
 
 
-<title>R Notebook</title>
+<title>CTT Data Tools - Ch. 4: Calibration</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1746,267 +1746,55 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">R Notebook</h1>
+<h1 class="title toc-ignore">CTT Data Tools - Ch. 4: Calibration</h1>
 
 </div>
 
 
 <!-- rnb-text-begin -->
-<div id="ctt-data-tools" class="section level1">
-<h1>CTT Data Tools</h1>
-<div id="api" class="section level2">
-<h2>1. API</h2>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHViR2xpY21GeWVTaGpaV3hzZEhKaFkydDBaV05vS1Z4dWJHbGljbUZ5ZVNoRVFra3BYRzVzYVdKeVlYSjVLRkpRYjNOMFozSmxjeWxjYm14cFluSmhjbmtvWkhWamEyUmlLVnh1WEc1emIzVnlZMlVvSjJaMWJtTjBhVzl1Y3k5a1lYUmhYMjFoYm1GblpYSXVVaWNwWEc1Y2JuTjBZWEowSUR3dElGTjVjeTUwYVcxbEtDbGNibHh1SXlNamMyVjBkR2x1WjNNakl5TmNiaU1nYlhsZmRHOXJaVzRnUEMwZ0ozUnZhMlZ1SjF4dWJYbGZkRzlyWlc0Z1BDMGdYQ0pqTW1Wa05XWTVNelZsT1dJNVpEUmpNbVV3TXpGbU9HRTVOakkzTnpNeE4ySTNOVEF5WkRrNE9XRmtaRFU1TkRjMk5UWmtZbVppWldWbE56QTRNbU0xWENKY2JseHVaR0pmYm1GdFpTQThMU0FuZEhWMGIzSnBZV3hmWkdJblhHNXRlWEJ5YjJwbFkzUWdQQzBnSjAxbFlXUnZkM01nVmpJbklDTWdkR2hwY3lCcGN5QjViM1Z5SUhCeWIycGxZM1FnYm1GdFpTQnZiaUI1YjNWeUlFTlVWQ0JoWTJOdmRXNTBYRzRqSUdOdmJtNGdQQzBnWkdKRGIyNXVaV04wS0ZKUWIzTjBaM0psY3pvNlVHOXpkR2R5WlhNb0tTd2daR0p1WVcxbFBXUmlYMjVoYldVcFhHNWpiMjV1SUR3dElFUkNTVG82WkdKRGIyNXVaV04wS0dSMVkydGtZam82WkhWamEyUmlLQ2tzSUdSaVpHbHlJRDBnWkdKZmJtRnRaU3dnY21WaFpGOXZibXg1SUQwZ1JrRk1VMFVwWEc0akl5TWpJeU1qSXlOY2JtOTFkSEJoZEdnZ1BDMGdYQ0l1TDJSaGRHRmNJbHh1SXlCblpYUmZiWGxmWkdGMFlTaHRlVjkwYjJ0bGJpd2diM1YwY0dGMGFDd2dZMjl1Yml3Z2JYbHdjbTlxWldOMFBXMTVjSEp2YW1WamRDbGNibWRsZEY5dGVWOWtZWFJoS0cxNVgzUnZhMlZ1TENCdmRYUndZWFJvTENCamIyNHNJRzE1Y0hKdmFtVmpkRDF0ZVhCeWIycGxZM1FzSUdKbFoybHVQV0Z6TGtSaGRHVW9YQ0l5TURJekxUQTRMVEF4WENJcExDQmxibVE5WVhNdVJHRjBaU2hjSWpJd01qTXRNRGd0TURKY0lpa3NJR1pwYkdWMGVYQmxjejFqS0Z3aWNtRjNYQ0lzSUZ3aWJtOWtaVjlvWldGc2RHaGNJaWtwWEc1Z1lHQWlmUT09IC0tPlxuXG5gYGByXG5saWJyYXJ5KGNlbGx0cmFja3RlY2gpXG5saWJyYXJ5KERCSSlcbmxpYnJhcnkoUlBvc3RncmVzKVxubGlicmFyeShkdWNrZGIpXG5cbnNvdXJjZSgnZnVuY3Rpb25zL2RhdGFfbWFuYWdlci5SJylcblxuc3RhcnQgPC0gU3lzLnRpbWUoKVxuXG4jIyNzZXR0aW5ncyMjI1xuIyBteV90b2tlbiA8LSAndG9rZW4nXG5teV90b2tlbiA8LSBcImMyZWQ1ZjkzNWU5YjlkNGMyZTAzMWY4YTk2Mjc3MzE3Yjc1MDJkOTg5YWRkNTk0NzY1NmRiZmJlZWU3MDgyYzVcIlxuXG5kYl9uYW1lIDwtICd0dXRvcmlhbF9kYidcbm15cHJvamVjdCA8LSAnTWVhZG93cyBWMicgIyB0aGlzIGlzIHlvdXIgcHJvamVjdCBuYW1lIG9uIHlvdXIgQ1RUIGFjY291bnRcbiMgY29ubiA8LSBkYkNvbm5lY3QoUlBvc3RncmVzOjpQb3N0Z3JlcygpLCBkYm5hbWU9ZGJfbmFtZSlcbmNvbm4gPC0gREJJOjpkYkNvbm5lY3QoZHVja2RiOjpkdWNrZGIoKSwgZGJkaXIgPSBkYl9uYW1lLCByZWFkX29ubHkgPSBGQUxTRSlcbiMjIyMjIyMjI1xub3V0cGF0aCA8LSBcIi4vZGF0YVwiXG4jIGdldF9teV9kYXRhKG15X3Rva2VuLCBvdXRwYXRoLCBjb25uLCBteXByb2plY3Q9bXlwcm9qZWN0KVxuZ2V0X215X2RhdGEobXlfdG9rZW4sIG91dHBhdGgsIGNvbiwgbXlwcm9qZWN0PW15cHJvamVjdCwgYmVnaW49YXMuRGF0ZShcIjIwMjMtMDgtMDFcIiksIGVuZD1hcy5EYXRlKFwiMjAyMy0wOC0wMlwiKSwgZmlsZXR5cGVzPWMoXCJyYXdcIiwgXCJub2RlX2hlYWx0aFwiKSlcbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShjZWxsdHJhY2t0ZWNoKVxubGlicmFyeShEQkkpXG5saWJyYXJ5KFJQb3N0Z3JlcylcbmxpYnJhcnkoZHVja2RiKVxuXG5zb3VyY2UoJ2Z1bmN0aW9ucy9kYXRhX21hbmFnZXIuUicpXG5cbnN0YXJ0IDwtIFN5cy50aW1lKClcblxuIyMjc2V0dGluZ3MjIyNcbiMgbXlfdG9rZW4gPC0gJ3Rva2VuJ1xubXlfdG9rZW4gPC0gXCJjMmVkNWY5MzVlOWI5ZDRjMmUwMzFmOGE5NjI3NzMxN2I3NTAyZDk4OWFkZDU5NDc2NTZkYmZiZWVlNzA4MmM1XCJcblxuZGJfbmFtZSA8LSAndHV0b3JpYWxfZGInXG5teXByb2plY3QgPC0gJ01lYWRvd3MgVjInICMgdGhpcyBpcyB5b3VyIHByb2plY3QgbmFtZSBvbiB5b3VyIENUVCBhY2NvdW50XG4jIGNvbm4gPC0gZGJDb25uZWN0KFJQb3N0Z3Jlczo6UG9zdGdyZXMoKSwgZGJuYW1lPWRiX25hbWUpXG5jb25uIDwtIERCSTo6ZGJDb25uZWN0KGR1Y2tkYjo6ZHVja2RiKCksIGRiZGlyID0gZGJfbmFtZSwgcmVhZF9vbmx5ID0gRkFMU0UpXG4jIyMjIyMjIyNcbm91dHBhdGggPC0gXCIuL2RhdGFcIlxuIyBnZXRfbXlfZGF0YShteV90b2tlbiwgb3V0cGF0aCwgY29ubiwgbXlwcm9qZWN0PW15cHJvamVjdClcbmdldF9teV9kYXRhKG15X3Rva2VuLCBvdXRwYXRoLCBjb24sIG15cHJvamVjdD1teXByb2plY3QsIGJlZ2luPWFzLkRhdGUoXCIyMDIzLTA4LTAxXCIpLCBlbmQ9YXMuRGF0ZShcIjIwMjMtMDgtMDJcIiksIGZpbGV0eXBlcz1jKFwicmF3XCIsIFwibm9kZV9oZWFsdGhcIikpXG5gYGAifQ== -->
-<pre class="r"><code>library(celltracktech)
-library(DBI)
-library(RPostgres)
-library(duckdb)
-
-source(&#39;functions/data_manager.R&#39;)
-
-start &lt;- Sys.time()
-
-###settings###
-# my_token &lt;- &#39;token&#39;
-my_token &lt;- &quot;c2ed5f935e9b9d4c2e031f8a96277317b7502d989add5947656dbfbeee7082c5&quot;
-
-db_name &lt;- &#39;tutorial_db&#39;
-myproject &lt;- &#39;Meadows V2&#39; # this is your project name on your CTT account
-# conn &lt;- dbConnect(RPostgres::Postgres(), dbname=db_name)
-conn &lt;- DBI::dbConnect(duckdb::duckdb(), dbdir = db_name, read_only = FALSE)
-#########
-outpath &lt;- &quot;./data&quot;
-# get_my_data(my_token, outpath, conn, myproject=myproject)
-get_my_data(my_token, outpath, con, myproject=myproject, begin=as.Date(&quot;2023-08-01&quot;), end=as.Date(&quot;2023-08-02&quot;), filetypes=c(&quot;raw&quot;, &quot;node_health&quot;))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiJHByb2plY3RzXG4kcHJvamVjdHNbWzFdXVxuJHByb2plY3RzW1sxXV0kaWRcblsxXSAyMFxuXG4kcHJvamVjdHNbWzFdXSRuYW1lXG5bMV0gXCJDVFQgT2ZmaWNlXCJcblxuXG4kcHJvamVjdHNbWzJdXVxuJHByb2plY3RzW1syXV0kaWRcblsxXSA3M1xuXG4kcHJvamVjdHNbWzJdXSRuYW1lXG5bMV0gXCJNZWFkb3dzIFYyXCJcblxuXG5cbkVycm9yIGluIGBkYlNlbmRRdWVyeSgpYCBhdCBcdTAwMWJdODtsaW5lID0gNDpjb2wgPSAzO2ZpbGU6Ly8vdG1wL1J0bXBCMzhYU08vcmVudi1wYWNrYWdlLW5ldy0yZGRkZDFhMWEwMjkxL0RCSS9SL2RiU2VuZFN0YXRlbWVudF9EQklDb25uZWN0aW9uX2NoYXJhY3Rlci5SXHUwMDA3REJJL1IvZGJTZW5kU3RhdGVtZW50X0RCSUNvbm5lY3Rpb25fY2hhcmFjdGVyLlI6NDozXHUwMDFiXTg7O1x1MDAwNzpcbiEgcmFwaV9wcmVwYXJlOiBJbnZhbGlkIGNvbm5lY3Rpb25cbkJhY2t0cmFjZTpcbiAxLiBjZWxsdHJhY2t0ZWNoOjpnZXRfbXlfZGF0YSguLi4pXG4gMi4gY2VsbHRyYWNrdGVjaDo6OmNyZWF0ZV9kdWNrKGRiX25hbWUpXG4gNC4gREJJOjpkYkV4ZWN1dGUoY29ubiwgXCJDUkVBVEUgVEFCTEUgSUYgTk9UIEVYSVNUUyBjdHRfcHJvamVjdFxcbiAgKFxcbiAgICBpZFxcdHNtYWxsaW50IFBSSU1BUlkgS0VZLFxcbiAgICBuYW1lXFx0VEVYVCBOT1QgTlVMTCBVTklRVUVcXG4gIClcIilcbiAgICAgIGF0IFx1MDAxYl04O2xpbmUgPSA1Nzpjb2wgPSA5O2ZpbGU6Ly8vdG1wL1J0bXBCMzhYU08vcmVudi1wYWNrYWdlLW5ldy0yZGRkZDFhMWEwMjkxL0RCSS9SL2RiRXhlY3V0ZS5SXHUwMDA3REJJL1IvZGJFeGVjdXRlLlI6NTc6OVx1MDAxYl04OztcdTAwMDdcbiA2LiBEQkk6OmRiU2VuZFN0YXRlbWVudChjb25uLCBzdGF0ZW1lbnQsIC4uLilcbiA4LiBkdWNrZGI6OmRiU2VuZFF1ZXJ5KGNvbm4sIHN0YXRlbWVudCwgLi4uKVxuIn0= -->
-<pre><code>$projects
-$projects[[1]]
-$projects[[1]]$id
-[1] 20
-
-$projects[[1]]$name
-[1] &quot;CTT Office&quot;
-
-
-$projects[[2]]
-$projects[[2]]$id
-[1] 73
-
-$projects[[2]]$name
-[1] &quot;Meadows V2&quot;
-
-
-
-Error in `dbSendQuery()` at ]8;line = 4:col = 3;file:///tmp/RtmpB38XSO/renv-package-new-2dddd1a1a0291/DBI/R/dbSendStatement_DBIConnection_character.RDBI/R/dbSendStatement_DBIConnection_character.R:4:3]8;;:
-! rapi_prepare: Invalid connection
-Backtrace:
- 1. celltracktech::get_my_data(...)
- 2. celltracktech:::create_duck(db_name)
- 4. DBI::dbExecute(conn, &quot;CREATE TABLE IF NOT EXISTS ctt_project\n  (\n    id\tsmallint PRIMARY KEY,\n    name\tTEXT NOT NULL UNIQUE\n  )&quot;)
-      at ]8;line = 57:col = 9;file:///tmp/RtmpB38XSO/renv-package-new-2dddd1a1a0291/DBI/R/dbExecute.RDBI/R/dbExecute.R:57:9]8;;
- 6. DBI::dbSendStatement(conn, statement, ...)
- 8. duckdb::dbSendQuery(conn, statement, ...)</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
+<div id="chapter-4.-calibration" class="section level1">
+<h1>Chapter 4. Calibration</h1>
+<div id="description" class="section level2">
+<h2>4.1 Description</h2>
+<p>To best use the triangulation approach, calibration needs to be
+performed on your equipment. The goal of calibration is to come up with
+tag-specific relationship between RSSI and distance that is appropriate
+for your study site. An example of how to calibrate your system can be
+found in the supplementary material of Bircher et al. 2020. Notice this
+calibration experiment demonstrates calibration of tags and receivers
+(in our case, nodes).</p>
 </div>
-<div id="github-and-pulling-data-into-r-from-local-repo." class="section level2">
-<h2>2. Github and Pulling data into R from Local Repo.</h2>
-</div>
-<div id="about-the-functions" class="section level2">
-<h2>3. About the Functions</h2>
-<div id="data-manager" class="section level3">
-<h3>3.1 Data Manager</h3>
-<div id="load_data" class="section level4">
-<h4>3.1.1 load_data</h4>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHViRzloWkY5a1lYUmhLR1JwY21WamRHOXllVjl1WVcxbFBVNVZURXdzSUhOMFlYSjBkR2x0WlQxT1ZVeE1MQ0JsYm1SMGFXMWxQVTVWVEV3c0lIUmhaM005VGxWTVRDbGNibHh1WUdCZ0luMD0gLS0+XG5cbmBgYHJcbmxvYWRfZGF0YShkaXJlY3RvcnlfbmFtZT1OVUxMLCBzdGFydHRpbWU9TlVMTCwgZW5kdGltZT1OVUxMLCB0YWdzPU5VTEwpXG5cbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG9hZF9kYXRhKGRpcmVjdG9yeV9uYW1lPU5VTEwsIHN0YXJ0dGltZT1OVUxMLCBlbmR0aW1lPU5VTEwsIHRhZ3M9TlVMTClcblxuYGBgIn0= -->
-<pre class="r"><code>load_data(directory_name=NULL, starttime=NULL, endtime=NULL, tags=NULL)
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p><strong>Arguments</strong>:</p>
+<div id="tag-calibration" class="section level2">
+<h2>4.2 Tag Calibration</h2>
 <ul>
-<li><p>directory_name: the input folder can contain a miscellany of raw
-downloaded files from the sensor station (beep data, node health, GPS)
-all in the same folder or subfolders. Zipped folders need to be
-unzipped, but compressed files do not (i.e. csv.gz files are just fine
-as they are).</p></li>
-<li><p>starttime: start time in POSIXct</p></li>
-<li><p>endtime: end time in POSIXct</p></li>
-<li><p>tags: a vector of tag IDs</p></li>
+<li>transects to cover differrently vegetated areas of the study
+site</li>
+<li>varying tag height at each distance along the transect</li>
+<li>simulations of movement and different orientations</li>
 </ul>
-<p><strong>Value</strong> The function will return a nested list where
-each item corresponds to:</p>
-<ol style="list-style-type: decimal">
-<li><p>beep data</p></li>
-<li><p>node health</p></li>
-<li><p>GPS</p></li>
-</ol>
-<p>Within each list item, there is a list for a data frame and the
-hardware version. Also a column ‘v’ has been added to each data frame
-indicating the hardware version.</p>
 </div>
+<div id="node-calibration" class="section level2">
+<h2>4.3 Node Calibration</h2>
+<p>Tags at varying orientations at fixed distance from each node.</p>
 </div>
-<div id="node-health" class="section level3">
-<h3>3.2 Node Health</h3>
-<div id="node_channel_plots" class="section level4">
-<h4>3.2.1 node_channel_plots</h4>
-<p><strong>Description</strong> This function is the ‘engine’ behind the
-export function. You can run it standalone with the following
-parameters, but you don’t have to if your sole goal is to ouput image
-files.</p>
-<p><strong>Usage</strong></p>
+<div id="how-to-use-the-output" class="section level2">
+<h2>4.4 How to Use the Output</h2>
+<p>There are a few routes to go from here. To extend the application by
+Bircher et al. (2020), the latter could be used to adjust RSSI values
+per node. Alternatively, one could derive a simple RSSI ~ distance
+relationship for each tag using the data above to <a href="https://iotandelectronics.wordpress.com/2016/10/07/how-to-calculate-distance-from-the-rssi-value-of-the-ble-beacon/">measure
+N</a> and input custom relationships (see 5.2.2).</p>
+<p><strong>References</strong></p>
+<p>Bircher, Nina, Kees van Oers, Camilla A Hinde, and Marc Naguib. 2020.
+“Extraterritorial Forays by Great Tits Are Associated with Dawn Song in
+Unexpected Ways.” Behavioral Ecology 31 (4): 873–83.</p>
+<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the
+toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
 <!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVibTlrWlY5amFHRnVibVZzWDNCc2IzUnpLR2hsWVd4MGFDd2dabkpsY1N3Z2FXUnpMQ0JzWVhROVRsVk1UQ3dnYkc5dVBVNVZURXdwWEc1Z1lHQWlmUT09IC0tPlxuXG5gYGByXG5ub2RlX2NoYW5uZWxfcGxvdHMoaGVhbHRoLCBmcmVxLCBpZHMsIGxhdD1OVUxMLCBsb249TlVMTClcbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubm9kZV9jaGFubmVsX3Bsb3RzKGhlYWx0aCwgZnJlcSwgaWRzLCBsYXQ9TlVMTCwgbG9uPU5VTEwpXG5gYGAifQ== -->
-<pre class="r"><code>node_channel_plots(health, freq, ids, lat=NULL, lon=NULL)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p><strong>Arguments</strong>:</p>
-<ul>
-<li>health: the 2nd list item output by the <code>load_data()</code>
-function</li>
-<li>freq: the time interval for which you want variables to be
-summarized</li>
-<li>ids: a vector if IDs; the ID is of the format “_”</li>
-<li>lat: latitude (optional to produce day/night shading)</li>
-<li>lon: longitude (optional to produce day/night shading)</li>
-</ul>
-<p><strong>Value</strong></p>
-<p>The output is a nested list, where the top level is each combination
-of channel and node, and each item is a list of the following plots:</p>
-<ol style="list-style-type: decimal">
-<li>battery</li>
-<li>RSSI</li>
-<li>number of check-ins</li>
-<li>scaled number of check-ins as line plot over scaled RSSI</li>
-<li>box plot of node RSSI The following only for v2</li>
-<li>latitude</li>
-<li>longitude</li>
-<li>scaled RSSI</li>
-<li>dispersion</li>
-</ol>
-</div>
-<div id="node_plots" class="section level4">
-<h4>3.2.2 node_plots</h4>
-<p><strong>Description</strong> A set of diagnostic plots per node</p>
-<p><strong>Usage</strong></p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVibTlrWlY5d2JHOTBjeWhvWldGc2RHZ3NJRzV2WkdWekxDQm1jbVZ4TENCc1lYUWdQU0JPVlV4TUxDQnNiMjRnUFNCT1ZVeE1LVnh1WUdCZ0luMD0gLS0+XG5cbmBgYHJcbm5vZGVfcGxvdHMoaGVhbHRoLCBub2RlcywgZnJlcSwgbGF0ID0gTlVMTCwgbG9uID0gTlVMTClcbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubm9kZV9wbG90cyhoZWFsdGgsIG5vZGVzLCBmcmVxLCBsYXQgPSBOVUxMLCBsb24gPSBOVUxMKVxuYGBgIn0= -->
-<pre class="r"><code>node_plots(health, nodes, freq, lat = NULL, lon = NULL)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p><strong>Arguments</strong> * health: the 2nd data frame output by the
-load_data() function * nodes: list of nodes * freq: the time interval
-for which you want variables to be summarized * lat: latitude * lon:
-longitude</p>
-<p><strong>Value</strong> The output is a nested list for each node,
-with the following plots for each:</p>
-<ol style="list-style-type: decimal">
-<li>RSSI</li>
-<li>number of check-ins</li>
-<li>battery the following only for v2</li>
-<li>time mismatches</li>
-<li>small time mismatches</li>
-</ol>
-</div>
-<div id="gps_plots" class="section level4">
-<h4>3.2.3 gps_plots</h4>
-<p><strong>Description</strong> Plots to visualize some GPS data. Only
-for v2 hardware</p>
-<p><strong>Usage</strong></p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVaM0J6WDNCc2IzUnpLR2R3Y3l3Z1puSmxjU2xjYm1CZ1lDSjkgLS0+XG5cbmBgYHJcbmdwc19wbG90cyhncHMsIGZyZXEpXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ3BzX3Bsb3RzKGdwcywgZnJlcSlcbmBgYCJ9 -->
-<pre class="r"><code>gps_plots(gps, freq)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p><strong>Arguments</strong> * gps: the 3rd data frame from the
-load_data() function * freq: the time interval of summary</p>
-<p><strong>Value</strong></p>
-<p>A list of the following plots:</p>
-<ol style="list-style-type: decimal">
-<li>altitude</li>
-<li>number of fixes</li>
-</ol>
-</div>
-<div id="export_node_channel_plots" class="section level4">
-<h4>3.2.4 export_node_channel_plots</h4>
-<p><strong>Description</strong> Export plots of node x channel data</p>
-<p><strong>Usage</strong></p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVaWGh3YjNKMFgyNXZaR1ZmWTJoaGJtNWxiRjl3Ykc5MGN5aHdiRzkwYkdsemREMU9WVXhNTENCb1pXRnNkR2dzSUdaeVpYRTlYQ0l4YUc5MWNsd2lMQ0J2ZFhSZmNHRjBhRDFuWlhSM1pDZ3BMQ0IzYUdsamFIQnNiM1J6UFdNb015d3lMREVwS1Z4dVhHNWdZR0FpZlE9PSAtLT5cblxuYGBgclxuZXhwb3J0X25vZGVfY2hhbm5lbF9wbG90cyhwbG90bGlzdD1OVUxMLCBoZWFsdGgsIGZyZXE9XCIxaG91clwiLCBvdXRfcGF0aD1nZXR3ZCgpLCB3aGljaHBsb3RzPWMoMywyLDEpKVxuXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZXhwb3J0X25vZGVfY2hhbm5lbF9wbG90cyhwbG90bGlzdD1OVUxMLCBoZWFsdGgsIGZyZXE9XCIxaG91clwiLCBvdXRfcGF0aD1nZXR3ZCgpLCB3aGljaHBsb3RzPWMoMywyLDEpKVxuXG5gYGAifQ== -->
-<pre class="r"><code>export_node_channel_plots(plotlist=NULL, health, freq=&quot;1hour&quot;, out_path=getwd(), whichplots=c(3,2,1))
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p><strong>Arguments</strong></p>
-<ul>
-<li>plotlist: allows you to pass the output of node_channel_plots() if
-you prefer</li>
-<li>health: the 2nd data frame output by the load_data() function</li>
-<li>freq: the time interval for which you want variables to be
-summarized</li>
-<li>out_path: where you want your plots to go</li>
-<li>whichplots: an index vector of the available plots</li>
-</ul>
-<p><strong>Output</strong></p>
-<p>This outputs a png for each input combination of node and
-channel.</p>
-</div>
-<div id="export_node_plots" class="section level4">
-<h4>3.2.5 export_node_plots</h4>
-<p><strong>Description</strong></p>
-<p>Same as above; index for the plots can be chosen from the list under
-the <code>node_plots()</code> description.</p>
-<p><strong>Usage</strong></p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVaWGh3YjNKMFgyNXZaR1ZmY0d4dmRITW9jR3h2ZEd4cGMzUWdQU0JPVlV4TUxDQm9aV0ZzZEdnc0lHWnlaWEVzSUc5MWRGOXdZWFJvUFdkbGRIZGtLQ2tzSUhnOU1pd2dlVDB6TENCNlBURXBYRzVnWUdBaWZRPT0gLS0+XG5cbmBgYHJcbmV4cG9ydF9ub2RlX3Bsb3RzKHBsb3RsaXN0ID0gTlVMTCwgaGVhbHRoLCBmcmVxLCBvdXRfcGF0aD1nZXR3ZCgpLCB4PTIsIHk9Mywgej0xKVxuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZXhwb3J0X25vZGVfcGxvdHMocGxvdGxpc3QgPSBOVUxMLCBoZWFsdGgsIGZyZXEsIG91dF9wYXRoPWdldHdkKCksIHg9MiwgeT0zLCB6PTEpXG5gYGAifQ== -->
-<pre class="r"><code>export_node_plots(plotlist = NULL, health, freq, out_path=getwd(), x=2, y=3, z=1)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p><strong>Arguments</strong></p>
-<p>to assign x, y, and z, look at the descript for
-<code>node_channel_plots()</code> and select those plot index in the
-order you want them on the page.</p>
-<p><strong>Output</strong> This outpust a png for each input node. Add a
-new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or
-by pressing <em>Ctrl+Alt+I</em>.</p>
-<!-- rnb-text-end -->
-</div>
-</div>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBDVFQgRGF0YSBUb29scwoKIyMgMS4gQVBJCgpgYGB7ciBhcGl9CmxpYnJhcnkoY2VsbHRyYWNrdGVjaCkKbGlicmFyeShEQkkpCmxpYnJhcnkoUlBvc3RncmVzKQpsaWJyYXJ5KGR1Y2tkYikKCnNvdXJjZSgnZnVuY3Rpb25zL2RhdGFfbWFuYWdlci5SJykKCnN0YXJ0IDwtIFN5cy50aW1lKCkKCiMjI3NldHRpbmdzIyMjCiMgbXlfdG9rZW4gPC0gJ3Rva2VuJwpteV90b2tlbiA8LSAiYzJlZDVmOTM1ZTliOWQ0YzJlMDMxZjhhOTYyNzczMTdiNzUwMmQ5ODlhZGQ1OTQ3NjU2ZGJmYmVlZTcwODJjNSIKCmRiX25hbWUgPC0gJ3R1dG9yaWFsX2RiJwpteXByb2plY3QgPC0gJ01lYWRvd3MgVjInICMgdGhpcyBpcyB5b3VyIHByb2plY3QgbmFtZSBvbiB5b3VyIENUVCBhY2NvdW50CiMgY29ubiA8LSBkYkNvbm5lY3QoUlBvc3RncmVzOjpQb3N0Z3JlcygpLCBkYm5hbWU9ZGJfbmFtZSkKY29ubiA8LSBEQkk6OmRiQ29ubmVjdChkdWNrZGI6OmR1Y2tkYigpLCBkYmRpciA9IGRiX25hbWUsIHJlYWRfb25seSA9IEZBTFNFKQojIyMjIyMjIyMKb3V0cGF0aCA8LSAiLi9kYXRhIgojIGdldF9teV9kYXRhKG15X3Rva2VuLCBvdXRwYXRoLCBjb25uLCBteXByb2plY3Q9bXlwcm9qZWN0KQpnZXRfbXlfZGF0YShteV90b2tlbiwgb3V0cGF0aCwgY29uLCBteXByb2plY3Q9bXlwcm9qZWN0LCBiZWdpbj1hcy5EYXRlKCIyMDIzLTA4LTAxIiksIGVuZD1hcy5EYXRlKCIyMDIzLTA4LTAyIiksIGZpbGV0eXBlcz1jKCJyYXciLCAibm9kZV9oZWFsdGgiKSkKdXBkYXRlX2RiKGNvbm4sIG91dHBhdGgsIG15cHJvamVjdCkKZGJEaXNjb25uZWN0KGNvbm4pCgojZmluZGZpbGVzKG91dHBhdGgsICdkaXJlY3RvcnkgcGF0aCB3aGVyZSB5b3Ugd2FudCB5b3VyIGNhdWdodCBmaWxlcyB0byBnbycpCgp0aW1lX2VsYXBzZSA8LSBTeXMudGltZSgpIC0gc3RhcnQKCnByaW50KHRpbWVfZWxhcHNlKQoKYGBgCgojIyAyLiBHaXRodWIgYW5kIFB1bGxpbmcgZGF0YSBpbnRvIFIgZnJvbSBMb2NhbCBSZXBvLgoKIyMgMy4gQWJvdXQgdGhlIEZ1bmN0aW9ucwoKIyMjIDMuMSBEYXRhIE1hbmFnZXIKCiMjIyMgMy4xLjEgbG9hZF9kYXRhCmBgYHtyIGRhdGFfbWFuYWdlcn0KbG9hZF9kYXRhKGRpcmVjdG9yeV9uYW1lPU5VTEwsIHN0YXJ0dGltZT1OVUxMLCBlbmR0aW1lPU5VTEwsIHRhZ3M9TlVMTCkKCmBgYAoKKipBcmd1bWVudHMqKjoKCiogZGlyZWN0b3J5X25hbWU6IHRoZSBpbnB1dCBmb2xkZXIgY2FuIGNvbnRhaW4gYSBtaXNjZWxsYW55IG9mIHJhdyBkb3dubG9hZGVkIGZpbGVzIGZyb20gdGhlIHNlbnNvciBzdGF0aW9uIChiZWVwIGRhdGEsIG5vZGUgaGVhbHRoLCBHUFMpIGFsbCBpbiB0aGUgc2FtZSBmb2xkZXIgb3Igc3ViZm9sZGVycy4gWmlwcGVkIGZvbGRlcnMgbmVlZCB0byBiZSB1bnppcHBlZCwgYnV0IGNvbXByZXNzZWQgZmlsZXMgZG8gbm90IChpLmUuIGNzdi5neiBmaWxlcyBhcmUganVzdCBmaW5lIGFzIHRoZXkgYXJlKS4KCiogc3RhcnR0aW1lOiBzdGFydCB0aW1lIGluIFBPU0lYY3QKCiogZW5kdGltZTogZW5kIHRpbWUgaW4gUE9TSVhjdAoKKiB0YWdzOiBhIHZlY3RvciBvZiB0YWcgSURzCgoqKlZhbHVlKioKVGhlIGZ1bmN0aW9uIHdpbGwgcmV0dXJuIGEgbmVzdGVkIGxpc3Qgd2hlcmUgZWFjaCBpdGVtIGNvcnJlc3BvbmRzIHRvOgoKMS4gYmVlcCBkYXRhCgoyLiBub2RlIGhlYWx0aAoKMy4gR1BTCgpXaXRoaW4gZWFjaCBsaXN0IGl0ZW0sIHRoZXJlIGlzIGEgbGlzdCBmb3IgYSBkYXRhIGZyYW1lIGFuZCB0aGUgaGFyZHdhcmUgdmVyc2lvbi4gQWxzbyBhIGNvbHVtbiAndicgaGFzIGJlZW4gYWRkZWQgdG8gZWFjaCBkYXRhIGZyYW1lIGluZGljYXRpbmcgdGhlIGhhcmR3YXJlIHZlcnNpb24uCgojIyMgMy4yIE5vZGUgSGVhbHRoCgojIyMjIDMuMi4xIG5vZGVfY2hhbm5lbF9wbG90cwoKKipEZXNjcmlwdGlvbioqClRoaXMgZnVuY3Rpb24gaXMgdGhlICdlbmdpbmUnIGJlaGluZCB0aGUgZXhwb3J0IGZ1bmN0aW9uLiBZb3UgY2FuIHJ1biBpdCBzdGFuZGFsb25lIHdpdGggdGhlIGZvbGxvd2luZyBwYXJhbWV0ZXJzLCBidXQgeW91IGRvbid0IGhhdmUgdG8gaWYgeW91ciBzb2xlIGdvYWwgaXMgdG8gb3VwdXQgaW1hZ2UgZmlsZXMuCgoqKlVzYWdlKioKYGBge3Igbm9kZV9jaGFubmVsX3Bsb3RzfQpub2RlX2NoYW5uZWxfcGxvdHMoaGVhbHRoLCBmcmVxLCBpZHMsIGxhdD1OVUxMLCBsb249TlVMTCkKYGBgCgoqKkFyZ3VtZW50cyoqOgoKKiBoZWFsdGg6IHRoZSAybmQgbGlzdCBpdGVtIG91dHB1dCBieSB0aGUgYGxvYWRfZGF0YSgpYCBmdW5jdGlvbgoqIGZyZXE6IHRoZSB0aW1lIGludGVydmFsIGZvciB3aGljaCB5b3Ugd2FudCB2YXJpYWJsZXMgdG8gYmUgc3VtbWFyaXplZAoqIGlkczogYSB2ZWN0b3IgaWYgSURzOyB0aGUgSUQgaXMgb2YgdGhlIGZvcm1hdCAiXyIKKiBsYXQ6IGxhdGl0dWRlIChvcHRpb25hbCB0byBwcm9kdWNlIGRheS9uaWdodCBzaGFkaW5nKQoqIGxvbjogbG9uZ2l0dWRlIChvcHRpb25hbCB0byBwcm9kdWNlIGRheS9uaWdodCBzaGFkaW5nKQoKKipWYWx1ZSoqCgpUaGUgb3V0cHV0IGlzIGEgbmVzdGVkIGxpc3QsIHdoZXJlIHRoZSB0b3AgbGV2ZWwgaXMgZWFjaCBjb21iaW5hdGlvbiBvZiBjaGFubmVsIGFuZCBub2RlLCBhbmQgZWFjaCBpdGVtIGlzIGEgbGlzdCBvZiB0aGUgZm9sbG93aW5nIHBsb3RzOgoKMS4gYmF0dGVyeQoyLiBSU1NJCjMuIG51bWJlciBvZiBjaGVjay1pbnMKNC4gc2NhbGVkIG51bWJlciBvZiBjaGVjay1pbnMgYXMgbGluZSBwbG90IG92ZXIgc2NhbGVkIFJTU0kKNS4gYm94IHBsb3Qgb2Ygbm9kZSBSU1NJClRoZSBmb2xsb3dpbmcgb25seSBmb3IgdjIKNi4gbGF0aXR1ZGUKNy4gbG9uZ2l0dWRlCjguIHNjYWxlZCBSU1NJCjkuIGRpc3BlcnNpb24KCiMjIyMgMy4yLjIgbm9kZV9wbG90cwoKKipEZXNjcmlwdGlvbioqCkEgc2V0IG9mIGRpYWdub3N0aWMgcGxvdHMgcGVyIG5vZGUKCioqVXNhZ2UqKgoKYGBge3Igbm9kZV9wbG90c30Kbm9kZV9wbG90cyhoZWFsdGgsIG5vZGVzLCBmcmVxLCBsYXQgPSBOVUxMLCBsb24gPSBOVUxMKQpgYGAKCioqQXJndW1lbnRzKioKKiBoZWFsdGg6IHRoZSAybmQgZGF0YSBmcmFtZSBvdXRwdXQgYnkgdGhlIGxvYWRfZGF0YSgpIGZ1bmN0aW9uCiogbm9kZXM6IGxpc3Qgb2Ygbm9kZXMKKiBmcmVxOiB0aGUgdGltZSBpbnRlcnZhbCBmb3Igd2hpY2ggeW91IHdhbnQgdmFyaWFibGVzIHRvIGJlIHN1bW1hcml6ZWQKKiBsYXQ6IGxhdGl0dWRlCiogbG9uOiBsb25naXR1ZGUKCioqVmFsdWUqKgpUaGUgb3V0cHV0IGlzIGEgbmVzdGVkIGxpc3QgZm9yIGVhY2ggbm9kZSwgd2l0aCB0aGUgZm9sbG93aW5nIHBsb3RzIGZvciBlYWNoOgoKMS4gUlNTSQoyLiBudW1iZXIgb2YgY2hlY2staW5zCjMuIGJhdHRlcnkKICB0aGUgZm9sbG93aW5nIG9ubHkgZm9yIHYyCjQuIHRpbWUgbWlzbWF0Y2hlcwo1LiBzbWFsbCB0aW1lIG1pc21hdGNoZXMKCiMjIyMgMy4yLjMgZ3BzX3Bsb3RzCgoqKkRlc2NyaXB0aW9uKioKUGxvdHMgdG8gdmlzdWFsaXplIHNvbWUgR1BTIGRhdGEuIE9ubHkgZm9yIHYyIGhhcmR3YXJlCgoqKlVzYWdlKioKCmBgYHtyIGdwc19wbG90c30KZ3BzX3Bsb3RzKGdwcywgZnJlcSkKYGBgCgoqKkFyZ3VtZW50cyoqCiogZ3BzOiB0aGUgM3JkIGRhdGEgZnJhbWUgZnJvbSB0aGUgbG9hZF9kYXRhKCkgZnVuY3Rpb24KKiBmcmVxOiB0aGUgdGltZSBpbnRlcnZhbCBvZiBzdW1tYXJ5CgoqKlZhbHVlKioKCkEgbGlzdCBvZiB0aGUgZm9sbG93aW5nIHBsb3RzOgoKMS4gYWx0aXR1ZGUKMi4gbnVtYmVyIG9mIGZpeGVzCgojIyMjIDMuMi40IGV4cG9ydF9ub2RlX2NoYW5uZWxfcGxvdHMKCioqRGVzY3JpcHRpb24qKgpFeHBvcnQgcGxvdHMgb2Ygbm9kZSB4IGNoYW5uZWwgZGF0YQoKKipVc2FnZSoqCmBgYHtyIGV4cG9ydF9ub2RlX2NoYW5uZWxfcGxvdHN9CmV4cG9ydF9ub2RlX2NoYW5uZWxfcGxvdHMocGxvdGxpc3Q9TlVMTCwgaGVhbHRoLCBmcmVxPSIxaG91ciIsIG91dF9wYXRoPWdldHdkKCksIHdoaWNocGxvdHM9YygzLDIsMSkpCgpgYGAKCioqQXJndW1lbnRzKioKCiogcGxvdGxpc3Q6IGFsbG93cyB5b3UgdG8gcGFzcyB0aGUgb3V0cHV0IG9mIG5vZGVfY2hhbm5lbF9wbG90cygpIGlmIHlvdSBwcmVmZXIKKiBoZWFsdGg6IHRoZSAybmQgZGF0YSBmcmFtZSBvdXRwdXQgYnkgdGhlIGxvYWRfZGF0YSgpIGZ1bmN0aW9uCiogZnJlcTogdGhlIHRpbWUgaW50ZXJ2YWwgZm9yIHdoaWNoIHlvdSB3YW50IHZhcmlhYmxlcyB0byBiZSBzdW1tYXJpemVkCiogb3V0X3BhdGg6IHdoZXJlIHlvdSB3YW50IHlvdXIgcGxvdHMgdG8gZ28KKiB3aGljaHBsb3RzOiBhbiBpbmRleCB2ZWN0b3Igb2YgdGhlIGF2YWlsYWJsZSBwbG90cwoKKipPdXRwdXQqKgoKVGhpcyBvdXRwdXRzIGEgcG5nIGZvciBlYWNoIGlucHV0IGNvbWJpbmF0aW9uIG9mIG5vZGUgYW5kIGNoYW5uZWwuCgojIyMjIDMuMi41IGV4cG9ydF9ub2RlX3Bsb3RzCgoqKkRlc2NyaXB0aW9uKioKClNhbWUgYXMgYWJvdmU7IGluZGV4IGZvciB0aGUgcGxvdHMgY2FuIGJlIGNob3NlbiBmcm9tIHRoZSBsaXN0IHVuZGVyIHRoZSBgbm9kZV9wbG90cygpYCBkZXNjcmlwdGlvbi4KCioqVXNhZ2UqKgoKYGBge3IgZXhwb3J0X25vZGVfcGxvdHMgfQpleHBvcnRfbm9kZV9wbG90cyhwbG90bGlzdCA9IE5VTEwsIGhlYWx0aCwgZnJlcSwgb3V0X3BhdGg9Z2V0d2QoKSwgeD0yLCB5PTMsIHo9MSkKYGBgCgoqKkFyZ3VtZW50cyoqCgp0byBhc3NpZ24geCwgeSwgYW5kIHosIGxvb2sgYXQgdGhlIGRlc2NyaXB0IGZvciBgbm9kZV9jaGFubmVsX3Bsb3RzKClgIGFuZCBzZWxlY3QgdGhvc2UgcGxvdCBpbmRleCBpbiB0aGUgb3JkZXIgeW91IHdhbnQgdGhlbSBvbiB0aGUgcGFnZS4KCioqT3V0cHV0KioKVGhpcyBvdXRwdXN0IGEgcG5nIGZvciBlYWNoIGlucHV0IG5vZGUuCkFkZCBhIG5ldyBjaHVuayBieSBjbGlja2luZyB0aGUgKkluc2VydCBDaHVuayogYnV0dG9uIG9uIHRoZSB0b29sYmFyIG9yIGJ5IHByZXNzaW5nICpDdHJsK0FsdCtJKi4K</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiQ1RUIERhdGEgVG9vbHMgLSBDaC4gNDogQ2FsaWJyYXRpb24iCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMgQ2hhcHRlciA0LiBDYWxpYnJhdGlvbgoKIyMgNC4xIERlc2NyaXB0aW9uCgpUbyBiZXN0IHVzZSB0aGUgdHJpYW5ndWxhdGlvbiBhcHByb2FjaCwgY2FsaWJyYXRpb24gbmVlZHMgdG8gYmUgcGVyZm9ybWVkIG9uIHlvdXIgZXF1aXBtZW50LiBUaGUgZ29hbCBvZiBjYWxpYnJhdGlvbiBpcyB0byBjb21lIHVwIHdpdGggdGFnLXNwZWNpZmljIHJlbGF0aW9uc2hpcCBiZXR3ZWVuIFJTU0kgYW5kIGRpc3RhbmNlIHRoYXQgaXMgYXBwcm9wcmlhdGUgZm9yIHlvdXIgc3R1ZHkgc2l0ZS4gQW4gZXhhbXBsZSBvZiBob3cgdG8gY2FsaWJyYXRlIHlvdXIgc3lzdGVtIGNhbiBiZSBmb3VuZCBpbiB0aGUgc3VwcGxlbWVudGFyeSBtYXRlcmlhbCBvZiBCaXJjaGVyIGV0IGFsLiAyMDIwLiBOb3RpY2UgdGhpcyBjYWxpYnJhdGlvbiBleHBlcmltZW50IGRlbW9uc3RyYXRlcyBjYWxpYnJhdGlvbiBvZiB0YWdzIGFuZCByZWNlaXZlcnMgKGluIG91ciBjYXNlLCBub2RlcykuCgojIyA0LjIgVGFnIENhbGlicmF0aW9uCgoqIHRyYW5zZWN0cyB0byBjb3ZlciBkaWZmZXJyZW50bHkgdmVnZXRhdGVkIGFyZWFzIG9mIHRoZSBzdHVkeSBzaXRlCiogdmFyeWluZyB0YWcgaGVpZ2h0IGF0IGVhY2ggZGlzdGFuY2UgYWxvbmcgdGhlIHRyYW5zZWN0Ciogc2ltdWxhdGlvbnMgb2YgbW92ZW1lbnQgYW5kIGRpZmZlcmVudCBvcmllbnRhdGlvbnMKCiMjIDQuMyBOb2RlIENhbGlicmF0aW9uCgpUYWdzIGF0IHZhcnlpbmcgb3JpZW50YXRpb25zIGF0IGZpeGVkIGRpc3RhbmNlIGZyb20gZWFjaCBub2RlLgoKIyMgNC40IEhvdyB0byBVc2UgdGhlIE91dHB1dAoKVGhlcmUgYXJlIGEgZmV3IHJvdXRlcyB0byBnbyBmcm9tIGhlcmUuIFRvIGV4dGVuZCB0aGUgYXBwbGljYXRpb24gYnkgQmlyY2hlciBldCBhbC4gKDIwMjApLCB0aGUgbGF0dGVyIGNvdWxkIGJlIHVzZWQgdG8gYWRqdXN0IFJTU0kgdmFsdWVzIHBlciBub2RlLiBBbHRlcm5hdGl2ZWx5LCBvbmUgY291bGQgZGVyaXZlIGEgc2ltcGxlIFJTU0kgfiBkaXN0YW5jZSByZWxhdGlvbnNoaXAgZm9yIGVhY2ggdGFnIHVzaW5nIHRoZSBkYXRhIGFib3ZlIHRvIFttZWFzdXJlIE5dKGh0dHBzOi8vaW90YW5kZWxlY3Ryb25pY3Mud29yZHByZXNzLmNvbS8yMDE2LzEwLzA3L2hvdy10by1jYWxjdWxhdGUtZGlzdGFuY2UtZnJvbS10aGUtcnNzaS12YWx1ZS1vZi10aGUtYmxlLWJlYWNvbi8pIGFuZCBpbnB1dCBjdXN0b20gcmVsYXRpb25zaGlwcyAoc2VlIDUuMi4yKS4KCioqUmVmZXJlbmNlcyoqCgpCaXJjaGVyLCBOaW5hLCBLZWVzIHZhbiBPZXJzLCBDYW1pbGxhIEEgSGluZGUsIGFuZCBNYXJjIE5hZ3VpYi4gMjAyMC4g4oCcRXh0cmF0ZXJyaXRvcmlhbCBGb3JheXMgYnkgR3JlYXQgVGl0cyBBcmUgQXNzb2NpYXRlZCB3aXRoIERhd24gU29uZyBpbiBVbmV4cGVjdGVkIFdheXMu4oCdIEJlaGF2aW9yYWwgRWNvbG9neSAzMSAoNCk6IDg3M+KAkzgzLiAKCkFkZCBhIG5ldyBjaHVuayBieSBjbGlja2luZyB0aGUgKkluc2VydCBDaHVuayogYnV0dG9uIG9uIHRoZSB0b29sYmFyIG9yIGJ5IHByZXNzaW5nICpDdHJsK0FsdCtJKi4KCgo=</div>
 
 
 
@@ -2053,7 +1841,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("tutorial_notebook.Rmd");
+  window.initializeSourceEmbed("tutorial_notebook_ch4.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>

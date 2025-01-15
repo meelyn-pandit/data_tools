@@ -1,0 +1,42 @@
+---
+title: "CTT Data Tools - Ch. 5 Localization Methods"
+output: html_notebook
+---
+
+# Chapter 5 Localization Methods
+
+## 5.1 Primitive: Weighted values
+
+**Description**
+This is simply a weighted average based on number of beeps on a node and max. RSSI values.
+
+**Usage**
+
+`weighted_average(freq, beeps, node, node_health=NULL, MAX_NODES=0, tag_id=NULL, calibrate=NULL, keep_cols = NULL, latlng = TRUE, minRSSI = 0)`
+
+**Arguments**
+
+* freq: this is the interval a localization should be summarized over, and is in the form of an interval (e.g. "3 min")
+* beep_data: raw beep data frame (e.g. `all_data[[1][1]]` from example.R)
+* node: read in node file
+* node_health: node health data frame
+* MAX_Nodes: the max number of nodes that should contriburte to a localization. default = 0 means all nodes
+* tag_id: a vector of tags to calculate locations for
+* calibrate: the session ID if you want to calculate over the entire duration a tag was left at a point
+* keep_cols: if there are valuable columns that shouldn't be dropped
+* latlng: BUGGY DO NOT USE YET
+* minRSSI: the minimum RSSI of data used for the location estimate
+
+**Value**
+
+A SpatialPointsDataFrame of estimated locations.
+
+## 5.2 Triangulation Functions
+
+### 5.2.1 Calibration
+
+**Usage**
+
+[!WARNING]
+This function returns a single relationship for the entire input! The example code to date also demonstrates the output of 1 distance ~ RSSI relationship. In order to calibrate per tag, it will be necessary to modify your code to loop over (e.g. apply) each tag ID, sub-setting your input data accordingly.
+

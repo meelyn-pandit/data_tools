@@ -158,4 +158,45 @@ A list of the following plots:
 1. altitude
 2. number of fixes
 
+#### 3.2.4 export_node_channel_plots
+
+**Description**
+Export plots of node x channel data
+
+**Usage**
+```{r export_node_channel_plots}
+export_node_channel_plots(plotlist=NULL, health, freq="1hour", out_path=getwd(), whichplots=c(3,2,1))
+
+```
+
+**Arguments**
+
+* plotlist: allows you to pass the output of node_channel_plots() if you prefer
+* health: the 2nd data frame output by the load_data() function
+* freq: the time interval for which you want variables to be summarized
+* out_path: where you want your plots to go
+* whichplots: an index vector of the available plots
+
+**Output**
+
+This outputs a png for each input combination of node and channel.
+
+#### 3.2.5 export_node_plots
+
+**Description**
+
+Same as above; index for the plots can be chosen from the list under the `node_plots()` description.
+
+**Usage**
+
+```{r export_node_plots }
+export_node_plots(plotlist = NULL, health, freq, out_path=getwd(), x=2, y=3, z=1)
+```
+
+**Arguments**
+
+to assign x, y, and z, look at the descript for `node_channel_plots()` and select those plot index in the order you want them on the page.
+
+**Output**
+This outpust a png for each input node.
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
